@@ -1,6 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
-#include <limits.h>
 
 listint_t *swap(listint_t *node, listint_t **list);
 
@@ -24,14 +22,10 @@ void insertion_sort_list(listint_t **list)
 
 	while (list_pos != NULL)
 	{
-		printf("*list = %p\t(*list)->n = %d\t|\tlist_pos = %p\tlist_pos->n = %d\t|\tlist_pos->prev = %p\tlist_pos->prev->n %d\n",
-			(void *)(*list), (*list)->n,
-			(void *)list_pos, list_pos->n,
-			(void *)list_pos->prev, (list_pos->prev != NULL) ? list_pos->prev->n : INT_MIN);
 		if (list_pos->n < list_pos->prev->n)
 		{
 			cur = list_pos;
-			while(cur->prev != NULL)
+			while (cur->prev != NULL)
 			{
 				if (cur->n < cur->prev->n)
 				{/* disorder found: swap nodes */
