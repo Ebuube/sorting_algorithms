@@ -1,2 +1,4 @@
 # Ignore test files
 *-main.c
+# Ignore aspell backup files
+*.bak
